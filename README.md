@@ -7,7 +7,7 @@ Note that since it's pretty low-level and there is no GUI, this isn't designed f
 - All items are named in enums (e.g. `Armor.LodeStone`, `Item.ReviveMint`, `KeyItem.Lancer`, `Weapon.ManeAx`)
 
 ## Missing features
-- Flags aren't named, since there are way too many of them. You will need to use [UTML](https://github.com/UnderminersTeam/UndertaleModTool) to find out what the flag's ID is
+- Flags aren't named, since there are way too many of them. You will need to use [UTMT](https://github.com/UnderminersTeam/UndertaleModTool) to find out what the flag's ID is
 - Some fields lack descriptive names (e.g. `Inv`, `Invc`) as I couldn't figure out their purpose
 
 ## Example usage
