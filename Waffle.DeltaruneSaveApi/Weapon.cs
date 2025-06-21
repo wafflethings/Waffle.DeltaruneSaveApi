@@ -1,0 +1,37 @@
+﻿namespace Waffle.DeltaruneSaveApi;
+
+public enum Weapon
+{
+    None = 0,
+    WoodBlade = 1,
+    ManeAx = 2,
+    RedScarf = 3,
+    EverybodyWeapon = 4,
+    Spookysword = 5,
+    BraveAx = 6,
+    Devilsknife = 7,
+    Trefoil = 8,
+    Ragger = 9,
+    DaintyScarf = 10,
+    TwistedSwd = 11,
+    SnowRing = 12,
+    ThornRing = 13,
+    BounceBlade = 14,
+    CheerScarf = 15,
+    MechaSaber = 16,
+    AutoAxe = 17,
+    FiberScarf = 18,
+    Ragger2 = 19,
+    BrokenSwd = 20,
+    PuppetScarf = 21,
+    FreezeRing = 22,
+    Saber10 = 23,
+    ToxicAxe = 24,
+    FlexScarf = 25,
+    BlackShard = 26,
+    JingleBlade = 50,
+    ScarfMark = 51,
+    JusticeAxe = 52,
+    Winglade = 53,
+    AbsorbAx = 54    
+}
