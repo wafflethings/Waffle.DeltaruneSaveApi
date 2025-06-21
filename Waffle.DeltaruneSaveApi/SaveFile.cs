@@ -217,7 +217,7 @@ public class SaveFile
 
     private SaveFile(string path, Version version, bool overwrite)
     {
-        _dataStream = File.Open(path, FileMode.Open);
+        _dataStream = File.Open(path, overwrite ? FileMode.OpenOrCreate : FileMode.Open);
         _version = version;
         _overwrite = overwrite;
         
