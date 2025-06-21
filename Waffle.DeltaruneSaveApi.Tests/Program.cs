@@ -10,24 +10,6 @@ class Program
         TestFile("filech4_0", Version.Chapter234);
     }
 
-    private void Exp()
-    {
-        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DELTARUNE", "filech4_0");
-        SaveFile file = SaveFile.Open(filePath, Version.Chapter234);
-
-        file.TrueName = "Waffle";                           // change file name
-        file.Gold = 999999;                                 // infinite money glitch
-        file.CharacterInfo[Character.Kris].MaxHp = 9999;    // more health
-        file.Items[0] = Item.ReviveBrite;                   // setting inventory slots
-
-        foreach (int i in Enumerable.Range(662, 7))
-        {
-            file.Flags[i] = 1;                              // recruit all enemies from chapter 4
-        }
-        
-        file.Save();                                        // save changes
-    }
-
     private static void TestFile(string name, Version version)
     {
         string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DELTARUNE", name);

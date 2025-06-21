@@ -1,7 +1,10 @@
 # Waffle.DeltaruneSaveApi
 
 A low-level NET8.0 library for modifying [DELTARUNE](https://deltarune.com) savedata.
+
 Note that since it's pretty low-level and there is no GUI, this isn't designed for users, and only for programmers who actually know what they're doing.
+
+Back up save data before usage -- I've tested it, but it might not work 100% of the time.
 
 ## Useful features
 - All items are named in enums (e.g. `Armor.LodeStone`, `Item.ReviveMint`, `KeyItem.Lancer`, `Weapon.ManeAx`)
