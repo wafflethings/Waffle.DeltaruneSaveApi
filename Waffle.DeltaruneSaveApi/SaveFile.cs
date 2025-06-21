@@ -44,11 +44,11 @@ public class SaveFile
 
     private Version _version;
     private FileStream _dataStream;
-    private bool _overwrite;
+    private string _saveToPath;
 
-    public static SaveFile Open(string path, Version version, bool overwrite = false)
+    public static SaveFile Open(string path, Version version, string saveToPath = "")
     {
-        SaveFile file = new(path, version, overwrite);
+        SaveFile file = new(path, version, saveToPath);
         using SaveFileReader reader = new(file._dataStream);
 
         file.TrueName = reader.ReadString();
@@ -137,7 +137,7 @@ public class SaveFile
 
     public void Save()
     {
-        using SaveFileWriter writer = new(_dataStream, _overwrite);
+        using SaveFileWriter writer = new(_saveToPath);
         
         writer.WriteString(TrueName);
         
@@ -215,11 +215,11 @@ public class SaveFile
         writer.DeleteEof();
     }
 
-    private SaveFile(string path, Version version, bool overwrite)
+    private SaveFile(string path, Version version, string saveToPath = "")
     {
-        _dataStream = File.Open(path, overwrite ? FileMode.OpenOrCreate : FileMode.Open);
+        _dataStream = File.Open(path, FileMode.Open);
         _version = version;
-        _overwrite = overwrite;
+        _saveToPath = saveToPath == string.Empty ? path + ".mod" : saveToPath;
         
         CharacterInfo = new Dictionary<Character, CharacterInfo>(CharacterCount);
         Weapons = new Weapon[WeaponAndArmorCount];

@@ -7,9 +7,9 @@ public class SaveFileWriter : IDisposable
 {
     private BinaryWriter _writer;
 
-    public SaveFileWriter(FileStream stream, bool overwrite = false)
+    public SaveFileWriter(string saveToPath)
     {
-        _writer = overwrite ? new BinaryWriter(stream, Encoding.UTF8) : new BinaryWriter(File.Open(stream.Name + ".mod", FileMode.Create), Encoding.UTF8);
+        _writer = new BinaryWriter(File.Open(saveToPath, FileMode.Create), Encoding.UTF8);
     }
     
     public void Dispose()
